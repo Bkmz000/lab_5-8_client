@@ -3,10 +3,10 @@ package client.modules
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import client.StartApp
-import client.command.AllCommandSamples
+import client.command.execute.samples.AllExecuteSamples
 
 val commandModule = module {
-    singleOf(::AllCommandSamples)
+    singleOf(::AllExecuteSamples)
 
 }
 

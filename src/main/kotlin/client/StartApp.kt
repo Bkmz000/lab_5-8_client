@@ -1,6 +1,8 @@
 package client
 
-import client.command.processing.CommandInterpretation
+import client.command.processing.ExecutePacketBuilder
+import client.command.packets.RequestPacket
+import client.command.packets.RequestType
 
 class StartApp {
 
@@ -8,10 +10,12 @@ class StartApp {
         println("Welcome to the CLI \"Product Collection\"")
         while(true) {
             val messageFromUser = readln()
-            val commandPacket = CommandInterpretation.getCommandPacket(messageFromUser)
+            val commandPacket = ExecutePacketBuilder.getExecutePacket(messageFromUser)
+
 
             if(commandPacket != null) {
-                println(commandPacket)
+                val requestPacket = RequestPacket(RequestType.COMMAND_EXECUTE, commandPacket)
+                println(requestPacket)
             } else {
 
                 println("Unknown command")

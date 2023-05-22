@@ -58,6 +58,7 @@ class Product private constructor(
 
     override fun toString(): String {
         return """
+            |
             |Product(
             |id=$id, name='$name', 
             |coordinates=$coordinates, 
