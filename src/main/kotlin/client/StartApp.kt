@@ -13,6 +13,7 @@ class StartApp {
             if(commandPacket != null) {
                 println(commandPacket)
             } else {
+
                 println("Unknown command")
             }
         }
