@@ -60,8 +60,9 @@ object ExecutePacketBuilder : KoinComponent {
         val commandArg = possibleArgs.tryCastListAs(executeSample.typeOfArgs!!) ?: return null
 
         val product = ProductBuilderCLI().build() ?: return null
+        commandArg.add(product)
 
-        return ExecutePacket(executeSample, commandArg, product)
+        return ExecutePacket(executeSample, commandArg)
     }
 
     private fun getScriptCommandPacket(executeSample: ExecuteSample, possibleFileName: MutableList<String>) : ExecutePacket? {

@@ -9,5 +9,4 @@ import kotlinx.serialization.Serializable
 data class ExecutePacket(
     val executeSample: ExecuteSample,
     val listOfArgs: MutableList<out @Contextual Any>? = null,
-    val product: Product? = null,
     )
